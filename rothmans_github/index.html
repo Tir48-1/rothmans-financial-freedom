@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ROTHMANS — Financial Freedom House</title>
+<style>
+:root{
+  --bg:#f2eee6; --paper:#fbf8f2; --ink:#162331; --muted:#616a70; --gold:#8e6940; --line:#d8cdbf; --deep:#12202f; --soft:#ece4d8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Noto Sans Hebrew",sans-serif;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,select{font:inherit}
+.wrap{width:min(1180px,90vw);margin:auto;position:relative;z-index:2}
+.serif{font-family:Georgia,"Times New Roman",serif}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(242,238,230,.74);backdrop-filter:blur(14px);border-bottom:1px solid rgba(216,205,191,.8)}
+.nav{height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(145deg,#1b3044,#0f1e2d);display:grid;place-items:center;color:#f7f4ed;font-family:Georgia,serif;font-weight:700;font-size:18px;position:relative;box-shadow:0 10px 24px rgba(18,32,47,.22)}
+.mark:before,.mark:after{content:"";position:absolute;background:#c5b59d;opacity:.85;border-radius:999px}
+.mark:before{left:8px;right:8px;bottom:7px;height:2px}.mark:after{top:8px;bottom:8px;left:50%;width:1px;opacity:.18}
+.wordmark{line-height:1}.wordmark b{display:block;letter-spacing:1.8px;font-size:18px}.wordmark small{display:block;color:var(--gold);font-size:10px;letter-spacing:1.8px;margin-top:4px}
+.navlinks{display:flex;gap:26px;font-size:13px;color:#47535c}.navlinks a:hover{color:var(--gold)}
+.navcta{border-bottom:1px solid var(--ink);padding-bottom:4px;font-weight:800;font-size:13px}
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;padding:42px 0 48px;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero video,.hero .video-fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:saturate(1.05) contrast(1.02)}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,18,28,.54) 0%, rgba(15,25,37,.60) 35%, rgba(24,36,49,.70) 100%);z-index:1}
+.hero .glow{position:absolute;border-radius:999px;filter:blur(60px);opacity:.5;z-index:1;pointer-events:none}.glow.one{width:380px;height:380px;background:rgba(176,138,88,.22);top:6%;left:3%}.glow.two{width:300px;height:300px;background:rgba(246,242,234,.12);top:18%;right:8%}.glow.three{width:420px;height:420px;background:rgba(176,138,88,.15);bottom:-8%;right:18%}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:end;color:#f7f3eb}
+.issue{font-size:11px;color:#d0bb9a;letter-spacing:2px;font-weight:900;margin-bottom:18px}
+h1{font-size:clamp(54px,8vw,110px);line-height:.92;letter-spacing:-3.5px;margin:0 0 22px;font-weight:500}.hero-sub{font-size:21px;color:#e2ddd5;max-width:720px;margin:0 0 28px}.hero-sub strong{color:#fff}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}.primary{background:#fff;color:var(--deep);border:0;padding:14px 22px;font-weight:800;cursor:pointer;box-shadow:0 12px 28px rgba(0,0,0,.15)}.secondary{border:1px solid rgba(255,255,255,.3);padding:14px 20px;background:rgba(255,255,255,.05);color:#fff;font-weight:800;backdrop-filter:blur(8px)}
+.scroll-cue{margin-top:24px;font-size:12px;color:#d2ccc3;display:flex;align-items:center;gap:10px}.scroll-dot{width:8px;height:8px;border-radius:50%;background:#d0bb9a;box-shadow:0 0 0 0 rgba(208,187,154,.5);animation:pulse 2.2s infinite}
+.hero-card{background:rgba(251,248,242,.10);border:1px solid rgba(255,255,255,.15);padding:28px;border-radius:22px;box-shadow:0 18px 40px rgba(5,10,15,.18);backdrop-filter:blur(14px);transform-style:preserve-3d;transition:transform .18s ease, box-shadow .18s ease}
+.hero-card .lab{font-size:11px;letter-spacing:1.8px;color:#d0bb9a;font-weight:900;margin-bottom:10px}.hero-card h3{font-size:34px;line-height:1.02;margin:0 0 12px;font-weight:500}.hero-card p{margin:0 0 18px;color:#e7e0d7}
+.metric-list{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}.metric{padding-top:14px;border-top:1px solid rgba(255,255,255,.16)}.metric strong{display:block;font-size:28px;font-family:Georgia,serif}.metric span{font-size:12px;color:#e4ddd4}
+.logo-panel{margin-top:16px;border-top:1px solid rgba(255,255,255,.16);padding-top:14px}.logo-panel img{width:100%;max-width:420px;height:auto;display:block;background:#f6f2ea;border-radius:18px;padding:10px}
+.floating-badge{position:absolute;right:10%;bottom:16%;z-index:2;background:rgba(18,32,47,.62);border:1px solid rgba(255,255,255,.18);padding:16px 18px;border-radius:18px;color:#fff;backdrop-filter:blur(12px);box-shadow:0 14px 30px rgba(0,0,0,.16);animation:float 4.8s ease-in-out infinite}
+.floating-badge .tiny{font-size:11px;color:#d0bb9a;font-weight:900;letter-spacing:1.3px}.floating-badge strong{display:block;font-size:32px;font-family:Georgia,serif;line-height:1;margin:6px 0 2px}
+section{padding:86px 0;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.kicker{font-size:11px;letter-spacing:1.8px;color:var(--gold);font-weight:900;margin-bottom:14px}.section-head{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:36px}.section-head h2{font-size:clamp(38px,5.5vw,72px);line-height:.95;letter-spacing:-2px;margin:0;font-weight:500}.section-head p{margin:0;color:#59636b;font-size:17px;max-width:570px}
+.reveal{opacity:0;transform:translateY(22px);transition:all .8s cubic-bezier(.2,.65,.2,1)}.reveal.visible{opacity:1;transform:none}
+.definition{display:grid;grid-template-columns:1.12fr .88fr;gap:34px}.definition-main{background:var(--paper);border:1px solid var(--line);padding:38px;border-radius:24px;box-shadow:0 18px 36px rgba(20,32,43,.05)}.definition-main .lead{font-size:31px;line-height:1.18;margin:0 0 20px;font-family:Georgia,serif}.definition-main p{color:var(--muted);font-size:17px;max-width:780px}.principles{display:grid;grid-template-columns:1fr;gap:14px}.principle{background:#efe7da;border:1px solid var(--line);padding:22px;border-radius:20px}.principle b{display:block;font-size:12px;letter-spacing:1.2px;color:var(--gold);margin-bottom:10px}.principle h3{margin:0 0 8px;font-size:24px}.principle p{margin:0;color:#5f6665;font-size:14px}
+.calc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:start}.calc-wrap{background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:0 18px 36px rgba(20,32,43,.05)}.calc-top{padding:30px 30px 6px}.calc-note{font-size:14px;color:var(--muted);margin-top:10px}.fields{padding:0 30px 30px;display:grid;grid-template-columns:1fr 1fr;gap:18px 28px}.field label{display:block;font-size:12px;font-weight:900;margin-bottom:6px}.field input,.field select{width:100%;background:transparent;border:0;border-bottom:1px solid #a59b8b;padding:12px 0;font-size:18px;color:var(--ink);outline:0}.field.full{grid-column:1 / -1}
+.results{border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);background:#f4efe6}.result{padding:24px 24px 28px;border-left:1px solid var(--line)}.result:last-child{border-left:0}.result span{display:block;font-size:11px;color:var(--gold);font-weight:900;letter-spacing:1px}.result strong{display:block;font-size:48px;line-height:1;margin:10px 0 4px;font-family:Georgia,serif}.result small{display:block;color:var(--muted)}.mini-rules{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.tag{border:1px solid var(--line);padding:9px 12px;font-size:12px;background:#f6f1e8;border-radius:999px}
+.lead-card{position:sticky;top:94px;background:linear-gradient(180deg,#132333 0%,#0f1d2b 100%);color:#f7f2eb;padding:30px;border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:0 22px 50px rgba(14,24,36,.26);transform-style:preserve-3d;transition:transform .18s ease, box-shadow .18s ease}.lead-card h3{font-size:34px;line-height:1.04;margin:0 0 12px;font-weight:500}.lead-card p{color:#cec8bf;margin:0 0 18px}.lead-card .field label{color:#d8d1c6}.lead-card .field input,.lead-card .field select{color:#fff;border-bottom-color:rgba(255,255,255,.32)}.checkbox{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#e7dfd4;margin:12px 0 6px}.checkbox input{margin-top:4px}.submit-note{font-size:12px;color:#bdb4a8;margin-top:10px}.more{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.15);font-size:13px;color:#d8d0c4}
+.map-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:36px}.map{background:var(--paper);border:1px solid var(--line);padding:18px 28px;border-radius:24px;box-shadow:0 18px 36px rgba(20,32,43,.05)}.step{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}.step:first-child{border-top:0}.num{font-size:12px;font-weight:900;color:var(--gold);letter-spacing:1px;padding-top:4px}.step h3{margin:0 0 4px;font-size:24px}.step p{margin:0;color:#63706e;font-size:14px}.map-side{display:grid;gap:16px}.side-card{background:#efe7da;border:1px solid var(--line);padding:22px;border-radius:20px}.side-card h3{margin:0 0 10px;font-size:26px}.side-card p{margin:0;color:#5f6767}.side-card ul{margin:14px 0 0;padding-right:18px;color:#4d565d}
+.book-band{background:#ddd2c1}.book-band .book-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:52px;align-items:center}.book-card{aspect-ratio:.7;background:#f3ede2;border:1px solid #b9ad9d;box-shadow:14px 20px 0 rgba(18,32,47,.11);padding:28px;display:flex;flex-direction:column;justify-content:space-between;border-radius:20px}.book-card .author{font-size:11px;letter-spacing:1.5px}.book-card h3{font-size:52px;line-height:.92;margin:0;font-weight:500}.book-copy h2{font-size:64px;line-height:.94;margin:0 0 18px;font-weight:500;letter-spacing:-2px}.book-copy p{color:#4c585c;font-size:18px;max-width:690px}.book-copy .small{font-size:13px;color:#6b6d6d;margin-top:16px}
+footer{padding:24px 0 48px;color:#717977;font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+[data-tilt]{will-change:transform}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(208,187,154,.5)}70%{box-shadow:0 0 0 14px rgba(208,187,154,0)}100%{box-shadow:0 0 0 0 rgba(208,187,154,0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media(max-width:960px){.navlinks{display:none}.hero{min-height:auto;padding-top:64px;padding-bottom:40px}.hero-grid,.definition,.calc-grid,.section-head,.map-grid,.book-band .book-grid{grid-template-columns:1fr}.fields,.results{grid-template-columns:1fr}.result,.results .result:last-child{border-left:0;border-top:1px solid var(--line)}.lead-card{position:static}.floating-badge{display:none}}
+@media(max-width:560px){.wrap{width:min(94vw,1180px)}h1{letter-spacing:-2.2px}.section-head h2,.book-copy h2{font-size:44px}.definition-main .lead{font-size:24px}.hero-sub{font-size:18px}.hero-card,.lead-card,.definition-main,.calc-wrap,.map{border-radius:20px}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap nav">
+  <div class="brand">
+    <div class="mark">RM</div>
+    <div class="wordmark"><b>ROTHMANS</b><small>FINANCIAL FREEDOM HOUSE</small></div>
+  </div>
+  <div class="navlinks"><a href="#freedom">מהו חופש כלכלי</a><a href="#calculators">מחשבונים</a><a href="#map">מפת התכנון</a><a href="#book">הספר</a></div>
+  <a class="navcta" href="#lead">קבלו מפת חופש</a>
+</div></div>
+
+<header class="hero">
+  <video autoplay muted loop playsinline preload="auto" poster="rothmans_logo.svg">
+    <source src="rothmans_hero_video.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class="glow one"></div><div class="glow two"></div><div class="glow three"></div>
+  <div class="wrap hero-grid">
+    <div class="reveal visible">
+      <div class="issue">ROTHMANS / FINANCIAL FREEDOM</div>
+      <h1 class="serif">חופש כלכלי<br>הוא היכולת לבחור<br><span style="color:#d6be96">איך לחיות.</span></h1>
+      <p class="hero-sub"><strong>לא רק לעבוד בשביל כסף — אלא לבנות הון שמתחיל לעבוד בשביל הזמן שלכם.</strong> כשהכסף משרת את החיים, אפשר לבחור בקצב, בקריירה, במשפחה, בפנאי ובעתיד, ממקום הרבה יותר חופשי.</p>
+      <div class="hero-actions">
+        <a class="primary" href="#calculators">התחילו מהמחשבון</a>
+        <a class="secondary" href="#freedom">מהו חופש כלכלי?</a>
+      </div>
+      <div class="scroll-cue"><span class="scroll-dot"></span>גללו וגלו את מפת החופש שלכם</div>
+    </div>
+    <div class="hero-card reveal visible" data-tilt>
+      <div class="lab">DYNAMIC BRAND PREVIEW</div>
+      <h3 class="serif">ROTHMANS</h3>
+      <p>בית לחופש כלכלי: ספר, מתודולוגיה ותכנון פיננסי מלא למשפחות שרוצות שליטה, בהירות ויותר זמן.</p>
+      <div class="metric-list">
+        <div class="metric"><strong class="counter" data-target="300">0</strong><span>כלל היסוד: הוצאה חודשית × 300</span></div>
+        <div class="metric"><strong class="counter" data-target="1">0</strong><span>מפה אחת לכל ההון המשפחתי</span></div>
+        <div class="metric"><strong class="counter" data-target="4">0</strong><span>שלבים: להבין, למדוד, לתכנן, ליישם</span></div>
+        <div class="metric"><strong>∞</strong><span>מטרה: חיים עם יותר חופש בחירה</span></div>
+      </div>
+      <div class="logo-panel"><img src="rothmans_logo.svg" alt="Rothmans logo"></div>
+    </div>
+  </div>
+  <div class="floating-badge"><div class="tiny">STARTING POINT</div><strong>Rule of 300</strong><span>הוצאה חודשית רצויה × 300 = יעד הון</span></div>
+</header>
+
+<section id="freedom"><div class="wrap">
+  <div class="section-head reveal">
+    <div><div class="kicker">WHAT IS FINANCIAL FREEDOM?</div><h2 class="serif">הגדרה מושכת.<br>לא קלישאה.</h2></div>
+    <p>חופש כלכלי אינו בהכרח “לא לעבוד לעולם”. הוא הנקודה שבה הכסף, ההון והתזרים מעניקים למשפחה מרחב בחירה אמיתי — לעבוד מתוך רצון, לחיות בלי לחץ מתמיד ולתכנן עתיד בצורה רגועה ובטוחה יותר.</p>
+  </div>
+  <div class="definition">
+    <div class="definition-main reveal"><p class="lead">חופש כלכלי הוא הרגע שבו <strong>החיים אינם מוכתבים רק על־ידי המשכורת הקרובה</strong> — אלא על־ידי התכנון, ההון והאפשרויות שצברתם.</p><p>זה יכול להיות היכולת להוריד קצב, לבחור עבודה טובה יותר, לקחת שנה גמישה, לעזור לילדים, לטייל יותר, או פשוט לדעת שהבית הפיננסי עומד על יסודות בריאים. המטרה איננה רק “עוד תשואה”, אלא מערכת כלכלית משפחתית שמייצרת יציבות, גמישות וזמן.</p></div>
+    <div class="principles">
+      <div class="principle reveal"><b>01 / שליטה</b><h3>בהירות במקום ערפל</h3><p>לדעת כמה צריך, כמה יש, ומה באמת חסר כדי להגיע לחופש.</p></div>
+      <div class="principle reveal"><b>02 / בחירה</b><h3>אפשרויות במקום לחץ</h3><p>הון שנבנה נכון יוצר גמישות בהחלטות החיים — לא רק חיסכון על הנייר.</p></div>
+      <div class="principle reveal"><b>03 / זמן</b><h3>הכסף קונה מרחב</h3><p>המטרה הסופית היא לקנות בחזרה זמן: למשפחה, לבריאות, ליזמות, לעשייה ולחיים.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="calculators"><div class="wrap calc-grid">
+  <div class="calc-wrap reveal">
+    <div class="calc-top">
+      <div class="kicker">START SIMPLE</div>
+      <h2 class="serif" style="font-size:56px;line-height:.95;margin:0 0 10px;font-weight:500;letter-spacing:-2px">שני מחשבונים פשוטים<br>שמייצרים שפה.</h2>
+      <div class="calc-note">נתחיל מהבסיס — מספר החופש וכמה שנים כבר קניתם. <strong>בהמשך מחכים עוד מחשבונים וכללים מהספר.</strong></div>
+    </div>
+    <div class="fields">
+      <div class="field"><label>גיל</label><input id="age" type="number" value="46"></div>
+      <div class="field"><label>הון פיננסי נזיל / צבור (₪)</label><input id="assets" type="number" value="4500000"></div>
+      <div class="field"><label>הפקדה חודשית (₪)</label><input id="saving" type="number" value="30000"></div>
+      <div class="field"><label>הוצאה חודשית רצויה (₪)</label><input id="spend" type="number" value="35000"></div>
+      <div class="field"><label>רובד חלומות חודשי (₪)</label><input id="dream" type="number" value="10000"></div>
+      <div class="field"><label>תשואה שנתית משוערת</label><select id="ret"><option value="0.03">3%</option><option value="0.05" selected>5%</option><option value="0.07">7%</option></select></div>
+      <div class="field full"><button class="primary" style="width:100%;background:var(--deep);color:#fff" onclick="calculate(true)">חשב את תמונת החופש</button></div>
+    </div>
+    <div class="results">
+      <div class="result"><span>מספר החופש</span><strong id="target">₪13.5מ׳</strong><small>לפי כלל ה־300</small></div>
+      <div class="result"><span>כמה כבר נצבר</span><strong id="pct">33%</strong><small>מהיעד הכולל</small></div>
+      <div class="result"><span>שנות חופש שנקנו</span><strong id="freedomYears">8.3</strong><small>בקצב החיים שבחרתם</small></div>
+    </div>
+    <div class="calc-top" style="padding-top:22px"><div class="mini-rules"><div class="tag">כלל 300 = הוצאה חודשית × 300</div><div class="tag">רובד חלומות = מה שמעבר להוצאות הבסיס</div><div class="tag">בהמשך: 10/30, 20/20, מפת פערים ועוד</div></div></div>
+  </div>
+
+  <aside class="lead-card reveal" id="lead" data-tilt>
+    <div class="kicker" style="color:#c9b79f">SAVE YOUR RESULTS</div>
+    <h3 class="serif">קבלו מפת חופש כלכלי אישית.</h3>
+    <p>השאירו פרטים ונשלח לכם סיכום ראשוני של מספר החופש, פער ההון ומפת התכנון. אם לא מתאים שיחזרו אליכם כרגע — סמנו וי.</p>
+    <div class="field"><label>שם מלא</label><input placeholder="שם מלא"></div>
+    <div class="field"><label>אימייל</label><input type="email" placeholder="name@email.com"></div>
+    <div class="field"><label>טלפון</label><input placeholder="050-0000000"></div>
+    <label class="checkbox"><input type="checkbox">לא מעוניין/ת כרגע שיחזרו אליי טלפונית — אפשר לשלוח רק במייל.</label>
+    <button class="primary" style="width:100%;margin-top:10px" onclick="alert('דמו בלבד — כאן נשמר הליד, נשלחת תוצאה ראשונית ומסווגת מידת העניין לפגישה.')">שלחו לי את מפת החופש</button>
+    <div class="submit-note">השארת פרטים אינה מחייבת. מטרת השלב הזה היא לתת ערך ראשוני ולהבין האם יש התאמה לתהליך מלא.</div>
+    <div class="more">בהמשך המסע באתר יוצגו מחשבונים נוספים, כללי אצבע וכלי מיפוי מתקדמים יותר מתוך הספר.</div>
+  </aside>
+</div></section>
+
+<section id="map"><div class="wrap">
+  <div class="section-head reveal"><div><div class="kicker">THE PLANNING MAP</div><h2 class="serif">מפת תכנון<br>לחופש כלכלי.</h2></div><p>אחרי שהמשפחה מבינה מהו “מספר החופש” שלה, אפשר לעבור משאלה מעורפלת לתוכנית מסודרת: מה יש, מה חסר, ואילו החלטות יקדמו את החופש בצורה המהירה והנכונה ביותר.</p></div>
+  <div class="map-grid">
+    <div class="map reveal">
+      <div class="step"><div class="num">01</div><div><h3>מגדירים את החיים הרצויים</h3><p>רמת החיים המבוקשת, רובד החלומות, יעדי משפחה, חינוך, בית, פרישה וגמישות עתידית.</p></div></div>
+      <div class="step"><div class="num">02</div><div><h3>ממפים את כל ההון</h3><p>פנסיה, קרנות השתלמות, תיקי השקעות, חסכונות, נדל״ן, חובות, מזומן והכנסות עתידיות.</p></div></div>
+      <div class="step"><div class="num">03</div><div><h3>בודקים את הפער</h3><p>כמה חסר עד מספר החופש, מה קצב ההתקדמות, ואילו צווארי בקבוק מעכבים את הדרך.</p></div></div>
+      <div class="step"><div class="num">04</div><div><h3>בונים אסטרטגיה</h3><p>הקצאת נכסים, תכנון תזרים, הגנות ביטוחיות, מיסוי, אשראי, מבנה בעלויות ומדיניות משיכת כסף.</p></div></div>
+      <div class="step"><div class="num">05</div><div><h3>מיישמים ומעדכנים</h3><p>לא מסמך חד־פעמי, אלא מערכת חיה שמתפתחת יחד עם המשפחה והחיים עצמם.</p></div></div>
+    </div>
+    <div class="map-side">
+      <div class="side-card reveal"><h3 class="serif">מה נכנס למפה?</h3><p>המטרה היא לנהל את כל החיים הפיננסיים של המשפחה כמערכת אחת.</p><ul><li>פנסיה וקרנות השתלמות</li><li>ביטוחי חיים, בריאות ואובדן כושר</li><li>תיקי השקעות וחסכונות</li><li>נדל״ן, משכנתאות והלוואות</li><li>תזרים, יעדים ותכנון פרישה</li></ul></div>
+      <div class="side-card reveal"><h3 class="serif">מה יוצא בסוף?</h3><p>מספר חופש ברור, תמונת מצב מלאה, סדרי עדיפויות, והמלצות מעשיות שאפשר ליישם שלב אחר שלב.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="book" class="book-band"><div class="wrap book-grid">
+  <div class="book-card reveal">
+    <div class="author">ד״ר טיראן רוטמן</div>
+    <div><div style="font-size:12px;color:var(--gold);font-weight:900;margin-bottom:10px">הספר שמתחיל את השיחה</div><h3 class="serif">איך<br>קונים<br>זמן?</h3></div>
+    <div style="font-size:13px;color:#656d6a">מהרעיון אל המספרים, ומהמספרים אל החיים.</div>
+  </div>
+  <div class="book-copy reveal"><div class="kicker">FROM THE BOOK TO THE PLAN</div><h2 class="serif">קוראים את הרעיון.<br>מחשבים את המספר.<br>בונים את החיים.</h2><p>הספר יוצר את השפה: זמן, חופש, כסף, בחירה והתנהגות. האתר מתרגם את השפה למספרים. מפת התכנון מתרגמת את המספרים להחלטות אמיתיות — מפנסיה וקרנות השתלמות ועד ביטוחים, תיקי השקעות ויעדי המשפחה.</p><div class="small">ROTHMANS אינו מוצג כאן כ“עוד סוכנות” אלא כבית תכנון כולל למשפחות שרוצות לנהל את ההון שלהן בצורה בוגרת, ברורה ואלגנטית.</div></div>
+</div></section>
+
+<footer><div class="wrap footer-row"><div><strong>ROTHMANS</strong> · Financial Freedom House</div><div>דמו קונספטואלי. הכללים והמחשבונים באתר נועדו להמחשה, לחשיבה ולשיחה ראשונית בלבד.</div></div></footer>
+
+<script>
+function shortMoney(n){if(n>=1000000)return '₪'+(n/1000000).toFixed(1)+'מ׳'; return '₪'+Math.round(n).toLocaleString('he-IL');}
+function animateValue(el,start,end,duration,suffix=''){
+  const startTime=performance.now();
+  function frame(now){
+    const p=Math.min((now-startTime)/duration,1);
+    const eased=1-Math.pow(1-p,3);
+    const val=start+(end-start)*eased;
+    el.textContent=(Number.isInteger(end)?Math.round(val):val.toFixed(1))+suffix;
+    if(p<1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+function calculate(animate=false){
+  const assets=+document.getElementById('assets').value||0;
+  const saving=+document.getElementById('saving').value||0;
+  const spend=+document.getElementById('spend').value||0;
+  const dream=+document.getElementById('dream').value||0;
+  const ret=+document.getElementById('ret').value||0.05;
+  const monthly=spend+dream;
+  const target=monthly*300;
+  const pct=Math.round((assets/Math.max(target,1))*100);
+  const yearsBought=assets/Math.max(monthly*12,1);
+  const targetEl=document.getElementById('target');
+  const pctEl=document.getElementById('pct');
+  const yearsEl=document.getElementById('freedomYears');
+  if(animate){
+    animateValue({set textContent(v){targetEl.textContent=v}},0,target/1000000,1000,'מ׳');
+    setTimeout(()=>{targetEl.textContent=shortMoney(target);},1000);
+    animateValue(pctEl,0,pct,900,'%');
+    animateValue(yearsEl,0,yearsBought,1100,'');
+  } else {
+    targetEl.textContent=shortMoney(target);
+    pctEl.textContent=pct+'%';
+    yearsEl.textContent=yearsBought.toFixed(1);
+  }
+}
+calculate(false);
+
+// scroll reveals
+const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// hero counters
+function startCounters(){
+  document.querySelectorAll('.counter').forEach(el=>{
+    if(el.dataset.done) return;
+    el.dataset.done='1';
+    const target=+el.dataset.target;
+    animateValue(el,0,target,1200,'');
+  });
+}
+setTimeout(startCounters,350);
+
+// tilt effect
+function applyTilt(el){
+  el.addEventListener('mousemove',e=>{
+    const r=el.getBoundingClientRect();
+    const px=(e.clientX-r.left)/r.width;
+    const py=(e.clientY-r.top)/r.height;
+    const rx=(.5-py)*9;
+    const ry=(px-.5)*10;
+    el.style.transform=`perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`;
+    el.style.boxShadow='0 28px 54px rgba(0,0,0,.18)';
+  });
+  el.addEventListener('mouseleave',()=>{
+    el.style.transform='perspective(1200px) rotateX(0deg) rotateY(0deg) translateY(0)';
+    el.style.boxShadow='';
+  });
+}
+document.querySelectorAll('[data-tilt]').forEach(applyTilt);
+</script>
+</body>
+</html>
