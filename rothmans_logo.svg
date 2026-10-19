@@ -1,0 +1,17 @@
+<svg width="720" height="220" viewBox="0 0 720 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="220" rx="24" fill="#F6F2EA"/>
+  <g transform="translate(28,28)">
+    <rect x="0.75" y="0.75" width="164.5" height="164.5" rx="28" fill="#112130" stroke="#C6B9A4" stroke-width="1.5"/>
+    <path d="M36 126V40H76.5C92.5 40 104 49.5 104 63C104 73.5 96.7 81.1 86.2 83.3L112.2 126H91.2L68.5 86.9H54.8V126H36ZM54.8 73.2H73.3C82 73.2 87.3 69.3 87.3 62.7C87.3 56.2 82 52.7 73.2 52.7H54.8V73.2Z" fill="#F6F2EA"/>
+    <path d="M118 126V40H136.2L164 87.7L191.8 40H210V126H192.6V70.4L166.3 114.8H161.1L134.8 70.4V126H118Z" fill="#C6B9A4"/>
+    <path d="M128 140.5H37V146.5H128V140.5Z" fill="#C6B9A4" opacity="0.72"/>
+    <path d="M141 146.5C156.5 146.5 170 140.1 180.7 127.3L208 94" stroke="#C6B9A4" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="208" cy="94" r="7" fill="#C6B9A4"/>
+  </g>
+  <g transform="translate(228,42)">
+    <text x="0" y="64" font-family="Georgia, 'Times New Roman', serif" font-size="56" fill="#112130" letter-spacing="2">ROTHMANS</text>
+    <text x="4" y="104" font-family="Arial, 'Noto Sans Hebrew', sans-serif" font-size="19" fill="#8B6A45" letter-spacing="2.4">FINANCIAL FREEDOM HOUSE</text>
+    <line x1="2" y1="124" x2="454" y2="124" stroke="#D3C7B3" stroke-width="1.5"/>
+    <text x="4" y="160" font-family="Arial, 'Noto Sans Hebrew', sans-serif" font-size="28" fill="#112130">חופש כלכלי. תכנון הון. חיים עם יותר זמן.</text>
+  </g>
+</svg>
